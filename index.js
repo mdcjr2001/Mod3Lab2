@@ -55,38 +55,37 @@
 // const matchingAnimals = findMatchingAnimals(beginsWith, animals);
 // console.log(matchingAnimals);
 
-// Part 4
+// Part 4 Complete
 
-// function camelCase(cssProp) {
-// var ret;
-// var parts;
+function camelCase(cssProp) {
+const words = cssProp.split('-');
+console.log(words);
+let string = "";
+words.forEach((word) => {
+  console.log(word);
+  if (string.length === 0) {
+    string = word;
+  } else {
+    string += word.charAt(0).toUpperCase() + word.substring(1);
+  }
+});
+return string;
+}
 
-// if(typeof dashed !== 'string' || !dashed) {
-//     return '';
-// }
-// parts = dashed.split('-');
-// ret = parts[0].toLowerCase();
-// parts = parts.slice(1);
-// ret = parts.reduce(function(previous, current){
-//     return previous +
-//     current.slice(0, 1).toUpperCase() +
-//     current.slice(1).toLowerCase();
-// }, ret);
-// // return ret;
-// return cssProp
-// }
+    function camelCase(cssProp) {
+    const words = cssProp.split("-");
+    let result = words[0];
+  
+    for (let i = 1; i < words.length; i++) {
+      result += words[i][0].toUpperCase() + words[i].slice(1);
+    }
+    return result;
+  }
+  
+  console.log("For loop function: ", camelCase("margin-left"));
+  console.log("For loop function: ", camelCase("background-image"));
+  console.log("For loop function: ", camelCase("display"));
 
-
-// // var test = ['margin-left', 'background-image', 'display']
-// // var expect = ['marginLeft', 'backgroundimage', 'display']
-
-// // test.forEach(function(item, i){
-// //     camelCase(item == expect[i])
-// // });
-
-// console.log(camelCase('margin-left')) // marginLeft
-// console.log(camelCase('background-image')) // backgroundImage
-// console.log(camelCase('display')) // display
 
 // // Part 5 Complete
 
